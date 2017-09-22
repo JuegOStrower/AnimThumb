@@ -24,5 +24,5 @@ document.getElementById("autothumb").addEventListener("change", function(){
     }
 });
 document.getElementById("autothumb").addEventListener("ready", function(){
-    document.getElementById("autothumb")[0].click();
+    document.getElementById("autothumb").click();
 });
