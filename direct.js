@@ -1,5 +1,5 @@
 //$(document).ready(function(){
-//document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" style="//display: none;">';
+//document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" style="display: none;">';
 $('<input type="file" id="autothumb" style="//display: none;">').appendTo(document.body);
 document.getElementById("autothumb").addEventListener("change", function(){
     if (window.location.hostname === "scratch.mit.edu"){
