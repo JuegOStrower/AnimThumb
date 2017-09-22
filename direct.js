@@ -1,5 +1,5 @@
 //$(document).ready(function(){
-document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" onload="document.getElementById("autothumb").click()" style="//display: none;">';
+document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" onload="document.getElementById(' + "'autothumb'" + ').click()" style="//display: none;">';
 document.getElementById("autothumb").addEventListener("change", function(){
     if (window.location.hostname === "scratch.mit.edu"){
         if (document.getElementById('report-this') === null){
