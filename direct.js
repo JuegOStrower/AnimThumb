@@ -1,3 +1,4 @@
+$(document).ready(function(){
 document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" style="//display: none;">';
 document.getElementById("autothumb").addEventListener("change", function(){
     if (window.location.hostname === "scratch.mit.edu"){
@@ -23,6 +24,5 @@ document.getElementById("autothumb").addEventListener("change", function(){
         alert("Please use this in a scratch project!");
     }
 });
-document.getElementById("autothumb").addEventListener("load", function(){
-    document.getElementById("autothumb").click();
+document.getElementById("autothumb").click();
 });
