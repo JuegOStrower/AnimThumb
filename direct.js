@@ -1,3 +1,4 @@
+//AGREGAR PARA SUBIR EL ARCHIVO, input con el archivo
 if (window.location.hostname === "scratch.mit.edu"){
     if (document.getElementById('report-this') === null){
         var reader = new FileReader();
