@@ -1,6 +1,6 @@
 $('<input type="file" id="autothumb" onchange="upload()" style="display: none;">').appendTo(document.body);
-$(document).ready(function() {
 document.getElementById("autothumb").click();
+function upload(){
 if (window.location.hostname === "scratch.mit.edu"){
     if (document.getElementById('report-this') === null){
         var reader = new FileReader();
@@ -23,4 +23,4 @@ if (window.location.hostname === "scratch.mit.edu"){
 } else {
     alert("Please use this in a scratch project!");
 }
-})
+}
