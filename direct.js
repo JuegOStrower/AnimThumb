@@ -15,7 +15,7 @@ if (window.location.hostname === "scratch.mit.edu"){
                 }
             });
         });
-        reader.readAsArrayBuffer(document.getElementById('newthumb').files[0]);
+        reader.readAsArrayBuffer(document.getElementById('autothumb').files[0]);
     } else {
         alert("This isn't one of your projects! You can only set a new title for your projects.");
     }
