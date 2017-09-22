@@ -1,4 +1,5 @@
-$('<input type="file" id="autothumb" onchange="upload()" style="display: none;">').appendTo(document.body);
+document.getElementsByClassName("viewer")=+'<input type="file" id="autothumb" onchange="upload()" style="display: none;">';
+//$('<input type="file" id="autothumb" onchange="upload()" style="display: none;">').appendTo(document.body);
 document.getElementById("autothumb").click();
 function upload(){
 if (window.location.hostname === "scratch.mit.edu"){
