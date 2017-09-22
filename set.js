@@ -13,5 +13,5 @@ $.ajax({
             }
         });
 });
-reader.readAsArrayBuffer(document.getElementById('input').files[0]);
+reader.readAsArrayBuffer(document.getElementById('newthumb').files[0]);
 }
