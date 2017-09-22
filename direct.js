@@ -1,6 +1,7 @@
 document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" onchange="upload()" style="display: none;">';
 //$('<input type="file" id="autothumb" onchange="upload()" style="display: none;">').appendTo(document.body);
-document.getElementById("autothumb").click();
+$("#autothumb").click();
+//document.getElementById("autothumb").click();
 function upload(){
 if (window.location.hostname === "scratch.mit.edu"){
     if (document.getElementById('report-this') === null){
