@@ -1,5 +1,5 @@
-$('<input type="file" id="newthumb" onchange="upload()" style="display: none;">').appendTo(document.body);
-document.getElementById("newthumb").click();
+$('<input type="file" id="autothumb" onchange="upload()" style="display: none;">').appendTo(document.body);
+document.getElementById("autothumb").click();
 if (window.location.hostname === "scratch.mit.edu"){
     if (document.getElementById('report-this') === null){
         var reader = new FileReader();
