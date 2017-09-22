@@ -1,6 +1,6 @@
 $( document ).ready(function() {
-document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" onchange="upload()" style="//display: none;">';
-//$('<input type="file" id="autothumb" onchange="upload()" style="display: none;">').appendTo(document.body);
+//document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" onchange="upload()" style="//display: none;">';
+$('<input type="file" id="autothumb" onchange="upload()" style="display: none;">').appendTo(document.body);
 //$("#autothumb").click();
 document.getElementById("autothumb").click();
 function upload(){
