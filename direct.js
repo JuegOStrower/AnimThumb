@@ -23,4 +23,4 @@ if (window.location.hostname === "scratch.mit.edu"){
 } else {
     alert("Please use this in a scratch project!");
 }
-}
+})
