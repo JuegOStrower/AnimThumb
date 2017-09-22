@@ -1,1 +1,1 @@
-document.getElementsByTagName("head")[0].innerHTML += "<script src='https://juegostrower.github.io/Thumchange/set.js'>";
+$("<script src='https://juegostrower.github.io/Thumchange/set.js'>").appendTo(document.head);
