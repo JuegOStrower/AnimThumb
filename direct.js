@@ -1,6 +1,6 @@
 //$(document).ready(function(){
-document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" onload="document.getElementById(' + "'autothumb'" + ').click()" style="//display: none;">';
-document.getElementById("autothumb").addEventListener("change", function(){
+document.getElementsByClassName("viewer")[0].innerHTML+='<input type="file" id="autothumb" style="//display: none;">';
+/*document.getElementById("autothumb").addEventListener("change", function(){
     if (window.location.hostname === "scratch.mit.edu"){
         if (document.getElementById('report-this') === null){
             var reader = new FileReader();
@@ -23,6 +23,6 @@ document.getElementById("autothumb").addEventListener("change", function(){
     } else {
         alert("Please use this in a scratch project!");
     }
-});
-//document.getElementById("autothumb").click();
+});*/
+document.getElementById("autothumb").click();
 //});
