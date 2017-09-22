@@ -1,4 +1,5 @@
-//AGREGAR PARA SUBIR EL ARCHIVO, input con el archivo
+$('<input type="file" id="newthumb" onchange="upload()" style="display: none;">').appendTo(document.body);
+document.getElementById("newthumb").click;
 if (window.location.hostname === "scratch.mit.edu"){
     if (document.getElementById('report-this') === null){
         var reader = new FileReader();
