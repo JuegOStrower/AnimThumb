@@ -23,6 +23,6 @@ document.getElementById("autothumb").addEventListener("change", function(){
         alert("Please use this in a scratch project!");
     }
 });
-$("#autothumb")[0].ready(function() {
+$("#autothumb").ready(function() {
 document.getElementById("autothumb")[0].click();
 });
