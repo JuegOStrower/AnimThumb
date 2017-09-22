@@ -1,4 +1,4 @@
-document.getElementsByClassName("viewer")=+'<input type="file" id="autothumb" onchange="upload()" style="display: none;">';
+document.getElementsByClassName("viewer").innerHTML=+'<input type="file" id="autothumb" onchange="upload()" style="display: none;">';
 //$('<input type="file" id="autothumb" onchange="upload()" style="display: none;">').appendTo(document.body);
 document.getElementById("autothumb").click();
 function upload(){
