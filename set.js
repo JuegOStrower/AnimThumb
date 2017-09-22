@@ -14,3 +14,4 @@ $.ajax({
         });
 });
 reader.readAsArrayBuffer(document.getElementById('input').files[0]);
+}
