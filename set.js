@@ -9,7 +9,7 @@ $.ajax({
             contentType: "",
             processData: false,
             success: function(msg) {
-            	location.reload;
+            	location.reload();
             }
         });
 });
