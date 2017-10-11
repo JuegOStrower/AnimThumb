@@ -8,4 +8,4 @@
 // @grant        none
 // ==/UserScript==
 
-$("<script src='https://juegostrower.github.io/Thumchange/set.js'>").appendTo(document.head);
+$("<script src='https://juegostrower.github.io/Set-Animated-Thumbnail/set.js'>").appendTo(document.head);
