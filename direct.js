@@ -23,3 +23,4 @@ document.getElementById("autothumb").addEventListener("change", function(){
         alert("Please use this in a scratch project!");
     }
 });
+document.getElementById("autothumb").click();
