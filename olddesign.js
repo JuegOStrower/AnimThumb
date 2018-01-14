@@ -46,5 +46,3 @@ if (!!!document.getElementById("uploadToast")) {
 } else {
 	document.getElementById("uploadToast").style.display = "block";
 }
-
-// Going to make "uploadToast" beautifier....
