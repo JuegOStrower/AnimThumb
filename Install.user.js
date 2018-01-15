@@ -48,7 +48,7 @@ if (!document.getElementById('report-this')) {
 							},
 							success: function () {
 								$("#uploadToast").css({"backgroundColor": "#dff0d8","color": "#468847","borderColor": "#d6e9c6"});
-								document.getElementById("uploadText").innerHTML = '<img src="' + reader1.result + '" style="width: 35px;height: 26px;vertical-align: bottom;"><span style="font-size: 15px;"> The thumbnail was successfully changed.</span>';
+								document.getElementById("uploadText").innerHTML = '<img src="' + reader1.result + '" style="width: 35px;height: 26px;vertical-align: bottom;background-color: white;"><span style="font-size: 15px;"> The thumbnail was successfully changed.</span>';
 								$("#updateSelect, #updateClose").attr("type", "submit");
 							},
 							error: function () {
