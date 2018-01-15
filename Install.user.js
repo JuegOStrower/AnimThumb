@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Set animated thumbnail
 // @namespace    https://juegostrower.tk/
-// @version      2.2
+// @version      2.3
 // @description  Set an animated Thumbnail in your Scratch Projects!
 // @author       JuegOStrower
 // @include      https://scratch.mit.edu/projects/*
@@ -9,6 +9,7 @@
 // @grant        none
 // ==/UserScript==
 
+//THIS SCRIPT WAS DEVELOPED BY @JUEGOSTROWER AND IT IS UNDER THE MIT LICENCE. IF YOU ARE GOING TO COPY IT YOU MUST GIVE CREDIT, THIS IS NOT COPYLEFT (AS SCRATCH)
 if (!document.getElementById('report-this')) {
 	document.getElementById("stats").innerHTML += '<div class="action tooltip bottom" id="update-thumbnail"><span class="hovertext"><span class="arrow"></span>Set an animated Thumbnail!</span>Upload thumbnail</div>';
     document.getElementById("update-thumbnail").addEventListener("click", function () {
