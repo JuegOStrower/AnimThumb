@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Set animated thumbnail
 // @namespace    https://juegostrower.tk/
-// @version      2.1
+// @version      2.2
 // @description  Set an animated Thumbnail in your Scratch Projects!
 // @author       JuegOStrower
 // @include      https://scratch.mit.edu/projects/*
@@ -10,9 +10,9 @@
 // ==/UserScript==
 
 if (!document.getElementById('report-this')) {
-	document.getElementById("stats").innerHTML += '<div onclick="upload()" class="action tooltip bottom" id="update-thumbnail"><span class="hovertext"><span class="arrow"></span>Set an animated Thumbnail!</span>Upload thumbnail</div>';
-	function upload() {
-		if (!document.getElementById("uploadToast")) {
+	document.getElementById("stats").innerHTML += '<div class="action tooltip bottom" id="update-thumbnail"><span class="hovertext"><span class="arrow"></span>Set an animated Thumbnail!</span>Upload thumbnail</div>';
+    document.getElementById("update-thumbnail").addEventListener("click", function () {
+    if (!document.getElementById("uploadToast")) {
 			$('<div id="uploadToast" style="padding: 5px 10px;background-color: #f9dcb5;color: #a56100;font-weight: 700;margin-top: -8px;margin-bottom: 8px!important;border-radius: 3px;border: 1px solid #fcc57b;text-shadow: 0 1px 0 rgba(255,255,255,0.5);line-height: 25px;"><span id="uploadText">Preparing everything</span><div style="float: right;"><input id="updateSelect" value="Select Another Image" type="hidden" class="button small grey" onclick="document.getElementById(\'uploadPicker\').click();" style="line-height: 0;padding: 8px 10px;"><input onclick="document.getElementById(\'uploadToast\').style.display=\'none\';" style="line-height: 0;padding: 8px 10px;" type="hidden" id="updateClose" class="button small grey" value="Close"></div></div>').prependTo(document.getElementById("content"));
 			if (!!document.getElementById("share-bar"))
 				$("#uploadToast").css("margin-bottom", "16px");
@@ -64,5 +64,5 @@ if (!document.getElementById('report-this')) {
 			});
 			document.getElementById("uploadPicker").click();
 		}
-	}
+	});
 }
