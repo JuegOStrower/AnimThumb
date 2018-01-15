@@ -48,7 +48,7 @@ if (!document.getElementById("uploadToast")) {
 				};
 				document.getElementById("uploadText").innerHTML = "Reading your image";
 			});
-			document.getElementById("uploadPicker").click();
+			document.getElementById("uploadSelect").click();
 		} else {
 			alert("This is not one of your Scratch Projects! This tool doesn't work for other websites. :)");
 		}
