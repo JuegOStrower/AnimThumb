@@ -1,3 +1,3 @@
 # Set-Animated-Thumbnail
-### To add the smart bookmark, draw the following link to your bookmarks:
-### [Animated Thumbnail](javascript:try {$("<script src='https://juegostrower.github.io/Set-Animated-Thumbnail/direct.js'> ").appendTo(document.head);} catch(err){alert("This tool doesn't work for other websites.");})
+### To add the smart bookmark, go to this link and add the Smart Bookmark
+[Animated Thumbnail][https://www.juegostrower.tk/Set-Animated-Thumbnail/]
