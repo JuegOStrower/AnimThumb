@@ -2,13 +2,14 @@ if (!document.getElementById("uploadToast")) {
 		if ((!document.getElementById('report-this')) && location.href.startsWith("https://scratch.mit.edu/projects/")) {
 			$('<div id="uploadToast" style="padding: 5px 10px;background-color: #f9dcb5;color: #a56100;font-weight: 700;margin-top: -8px;margin-bottom: 8px!important;border-radius: 3px;border: 1px solid #fcc57b;text-shadow: 0 1px 0 rgba(255,255,255,0.5);line-height: 25px;"><span id="uploadText">Preparing everything</span><div style="float: right;"><input id="updateSelect" value="Select Another Image" type="hidden" class="button small grey" onclick="document.getElementById(\'uploadPicker\').click();" style="line-height: 0;padding: 8px 10px;"><input onclick="document.getElementById(\'uploadToast\').style.display=\'none\';" style="line-height: 0;padding: 8px 10px;" type="hidden" id="updateClose" class="button small grey" value="Close"></div></div>').prependTo(document.getElementById("content"));
 			if (!!document.getElementById("share-bar"))$("#uploadToast").css("margin-bottom", "16px");
-			$('<input type="file" id="uploadPicker" style="display: none;" accept="image/*"onload="document.getElementById(\'uploadPicker\').click();">').appendTo(document.body);
+			$('<input type="file" id="uploadPicker" style="display: none;" accept="image/*">').appendTo(document.body);
 			document.getElementById("uploadPicker").addEventListener("click", function () {
 				$("#uploadToast").css({"backgroundColor": "#f9dcb5","color": "#a56100","borderColor": "#fcc57b"});
 				$("#updateSelect").attr("type", "submit");
 				$("#updateClose").attr("type", "hidden");
 				document.getElementById("uploadText").innerHTML = "Waiting for file";
 				document.getElementById("uploadToast").style.display = "block";
+				document.getElementById("uploadPicker").click();
 			});
 			document.getElementById("uploadPicker").addEventListener("change", function () {
 				$("#updateSelect, #updateClose").attr("type", "hidden");
@@ -48,6 +49,7 @@ if (!document.getElementById("uploadToast")) {
 				};
 				document.getElementById("uploadText").innerHTML = "Reading your image";
 			});
+			document.getElementById("uploadPicker").click();
 		} else {
 			alert("This is not one of your Scratch Projects! This tool doesn't work for other websites. :)");
 		}
