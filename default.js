@@ -48,10 +48,10 @@ if (!document.getElementById("uploadToast")) {
 				};
 				document.getElementById("uploadText").innerHTML = "Reading your image";
 			});
-			document.getElementById("updateSelect").click();
+			document.getElementById("uploadPicker").click();
 		} else {
 			alert("This is not one of your Scratch Projects! This tool doesn't work for other websites. :)");
 		}
 } else if ((!document.getElementById('report-this')) && location.href.startsWith("https://scratch.mit.edu/projects/")) {
-	document.getElementById("updateSelect").click();
+	document.getElementById("uploadPicker").click();
 }
