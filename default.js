@@ -9,7 +9,6 @@ if (!document.getElementById("uploadToast")) {
 				$("#updateClose").attr("type", "hidden");
 				document.getElementById("uploadText").innerHTML = "Waiting for file";
 				document.getElementById("uploadToast").style.display = "block";
-				document.getElementById("uploadPicker").click();
 			});
 			document.getElementById("uploadPicker").addEventListener("change", function () {
 				$("#updateSelect, #updateClose").attr("type", "hidden");
