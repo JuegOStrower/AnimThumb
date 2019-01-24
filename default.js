@@ -44,7 +44,7 @@ try {
 					reader.readAsArrayBuffer(document.getElementById('juegostrower-animthumb-picker').files[0]);
 				}
 			});
-			if(document.getElementById("juegostrower-animthumb-picker").files[0])document.getElementById("juegostrower-animthumb-picker").dispatchEvent(new CustomEvent("change"));
+			if(document.getElementById("juegostrower-animthumb-picker"))if(document.getElementById("juegostrower-animthumb-picker").files[0])document.getElementById("juegostrower-animthumb-picker").dispatchEvent(new CustomEvent("change"));
 			document.getElementById("juegostrower-animthumb-upload").click();
 		}
 	} else {
