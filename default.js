@@ -9,6 +9,7 @@ try {
 			document.getElementById("juegostrower-animthumb-close").addEventListener("click", function () {
 				document.getElementById("juegostrower-animthumb-banner").parentElement.removeChild(document.getElementById("juegostrower-animthumb-banner"));
 				document.getElementById("view").style["margin-top"]="50px";
+				document.getElementById("juegostrower-animthumb-picker").value = "";
 			});
 			document.getElementById("juegostrower-animthumb-picker").addEventListener("change", function () {
 				if(document.getElementById("juegostrower-animthumb-picker").files[0]&&document.getElementById("juegostrower-animthumb-banner")){
