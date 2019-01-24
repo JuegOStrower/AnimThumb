@@ -44,7 +44,7 @@ try {
 					reader.readAsArrayBuffer(document.getElementById('juegostrower-animthumb-picker').files[0]);
 				}
 			});
-			document.getElementById("juegostrower-animthumb-picker").click();
+			document.getElementById("juegostrower-animthumb-upload").click();
 		}
 	} else {
 		alert("You have to go to one of your Scratch projects to use this. Then, click this again. If you think this is an error, comment on the @JuegOStrower (the developer, aka me) profile.");
