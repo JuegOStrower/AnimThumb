@@ -26,23 +26,27 @@ try {
 	console.log(e);
 }
 function juegostrowerAnimthumbStart(){
-	if(!document.getElementById("juegostrower-animthumb-picker")){
-		try {
-			var juegostrowerAnimthumbUpload=document.createElement("input");
-			juegostrowerAnimthumbUpload.id="juegostrower-animthumb-picker";
-			juegostrowerAnimthumbUpload.type="file";
-			juegostrowerAnimthumbUpload.accept="image/*";
+    try {
+        if(!document.getElementById("juegostrower-animthumb-picker")){
+            var juegostrowerAnimthumbUpload=document.createElement("input");
+            juegostrowerAnimthumbUpload.id="juegostrower-animthumb-picker";
+            juegostrowerAnimthumbUpload.type="file";
+            juegostrowerAnimthumbUpload.accept="image/*";
             juegostrowerAnimthumbUpload.style="visibility: hidden; position: absolute; top: 0; left: -5000px;";
             document.getElementsByTagName("head")[0].appendChild(juegostrowerAnimthumbUpload);
-            juegostrowerAnimthumbUpload.click();
-			var juegostrowerAnimthumbScript=document.createElement("script");
-			juegostrowerAnimthumbScript.src="https://www.juegostrower.tk/AnimThumb/default.js";
-			document.getElementsByTagName("head")[0].appendChild(juegostrowerAnimthumbScript);
-        } catch(e){
-			alert("Animated Thumbnail found an unxpected error importing the script. Please comment on the @JuegOStrower (the developer, aka me) profile to help to fix the problem.");
-            console.log(e);
-		}
-	} else {
-		if(document.getElementById("juegostrower-animthumb-upload").style.display!=="none")document.getElementById("juegostrower-animthumb-picker").click();
-	}
+        }
+        if(!document.getElementById("juegostrower-animthumb-banner")){
+            var juegostrowerAnimthumbScript=document.createElement("script");
+            juegostrowerAnimthumbScript.src="https://www.juegostrower.tk/AnimThumb/default.js";
+            document.getElementsByTagName("head")[0].appendChild(juegostrowerAnimthumbScript);
+        }
+        try {
+            if(document.getElementById("juegostrower-animthumb-upload").style.display!=="none")document.getElementById("juegostrower-animthumb-picker").click();
+        } catch(e) {
+            document.getElementById("juegostrower-animthumb-picker").click();
+        }
+    } catch(e){
+        alert("Animated Thumbnail found an unxpected error importing the script. Please comment on the @JuegOStrower (the developer, aka me) profile to help to fix the problem.");
+        console.log(e);
+    }
 }
