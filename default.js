@@ -1,56 +1,54 @@
-if (!document.getElementById("uploadToast")) {
-		if ((!document.getElementById('report-this')) && location.href.startsWith("https://scratch.mit.edu/projects/")) {
-			$('<div id="uploadToast" style="padding: 5px 10px;background-color: #f9dcb5;color: #a56100;font-weight: 700;margin-top: -8px;margin-bottom: 8px!important;border-radius: 3px;border: 1px solid #fcc57b;text-shadow: 0 1px 0 rgba(255,255,255,0.5);line-height: 25px;"><span id="uploadText">Preparing everything</span><div style="float: right;"><input id="updateSelect" value="Select Another Image" type="hidden" class="button small grey" onclick="document.getElementById(\'uploadPicker\').click();" style="line-height: 0;padding: 8px 10px;"><input onclick="document.getElementById(\'uploadToast\').style.display=\'none\';" style="line-height: 0;padding: 8px 10px;" type="hidden" id="updateClose" class="button small grey" value="Close"></div></div>').prependTo(document.getElementById("content"));
-			if (!!document.getElementById("share-bar"))$("#uploadToast").css("margin-bottom", "16px");
-			document.getElementById("uploadPicker").addEventListener("click", function () {
-				$("#uploadToast").css({"backgroundColor": "#f9dcb5","color": "#a56100","borderColor": "#fcc57b"});
-				$("#updateSelect").attr("type", "submit");
-				$("#updateClose").attr("type", "hidden");
-				document.getElementById("uploadText").innerHTML = "Waiting for file";
-				document.getElementById("uploadToast").style.display = "block";
+//THIS SCRIPT WAS DEVELOPED BY @JUEGOSTROWER AND IT IS UNDER THE MIT LICENCE. IF YOU ARE GOING TO COPY IT YOU MUST GIVE CREDIT, THIS IS NOT COPYLEFT (AS SCRATCH)
+try {
+	if(new RegExp("https://scratch.mit.edu/projects/[0-9]+(|/)$").test(window.location.href)&&!document.getElementsByClassName("button action-button report-button").length){
+		if(!document.getElementById("juegostrower-animthumb-banner")){
+			document.getElementById("navigation").innerHTML+='<div id="juegostrower-animthumb-banner" class="banner-outer" style="background-color: rgb(110, 135, 170);color: lightcyan;"><div class="flex-row inner banner-inner"><img id="juegostrower-animthumb-image" src="https://cdn2.scratch.mit.edu/get_image/project/' + location.href.replace(/\D/g,'').substring(0,10) + '_80x60.png?'+new Date().getTime()+'" style="width: 80px;height: 60px;vertical-align: bottom;background-color: white;"><span class="banner-text"><a href="/users/JuegOStrower" style="color: inherit;text-decoration: underline;">@JuegOStrower</a> Custom Thumbnail:<br><span id="juegostrower-animthumb-status" style="font-size: 25px;">Pick your image or animated gif!</span></span><button id="juegostrower-animthumb-upload" class="button banner-button"><span>Choose Another Image</span></button><button id="juegostrower-animthumb-close" class="button banner-button"><span>Close this</span></button></div><input id="juegostrower-animthumb-picker" type="file" accept="image/*" style="visibility: hidden; display: none;"></div>';
+			document.getElementById("view").style["margin-top"]="114px";
+			document.getElementById("juegostrower-animthumb-upload").addEventListener("click", function () {
+				document.getElementById("juegostrower-animthumb-picker").click();
 			});
-			document.getElementById("uploadPicker").addEventListener("change", function () {
-				$("#updateSelect, #updateClose").attr("type", "hidden");
-				var reader1 = new FileReader();
-				reader1.readAsDataURL(document.getElementById('uploadPicker').files[0]);
-				reader1.onload = function () {
+			document.getElementById("juegostrower-animthumb-close").addEventListener("click", function () {
+				document.getElementById("juegostrower-animthumb-banner").parentElement.removeChild(document.getElementById("juegostrower-animthumb-banner"));
+				document.getElementById("view").style["margin-top"]="50px";
+			});
+			document.getElementById("juegostrower-animthumb-picker").addEventListener("change", function () {
+				if(document.getElementById("juegostrower-animthumb-picker").files[0]){
+					document.getElementById("juegostrower-animthumb-banner").style.color="lightcyan";
+					document.getElementById("juegostrower-animthumb-status").innerText="Preparing upload...";
+					document.getElementById("juegostrower-animthumb-image").src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA8CAIAAAB+RarbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGuSURBVGhD7ZPrjcMwDIMzUGfpKF2ki3SPLHaW5QdpJwFcBIcDT98vS5ZJMWi3/Z8RgdWJwOpEYHUisDoRWJ0IrE4EVicCq3NX4M/rsW2P16eUd/F+dtV7LErgY7EFiwh8Dxj4HiIwwl2rrLAlHHgwCeRG4/kubadLzK4kj4HJ4nIZAy0cH1gM3B8WyVrwKF2VsmVO1dkVlaMfWdRLmkULvuqGy4H7cq5brnE0n3GOJgem3fAhLXBeGOgwuFG5GphywP3xsXHUc1B1/izYIQ18lrnQ+ZXANJcg0zyB+DRoVL4LnJ/VYlAtgceP4rDq5IEdkB0cMufXoHGwxHeB87lDkjUwqRWG3jwC6+BlPtOXgclRBYenhzQ8FyeB7QgOTA3sO6EG6Ru5AR8sP6jzNO2TTYpLeuamrFKr0W+2aA4JahRZoI32wAYPol6iSNY9EjBA2xgkhRdl1kkXNjgKOalr1Xpgk0RLfMmBL5k8/igHe0JLMLD/uGDRvHhtKAZO8H8Tf98LgTWIwOpEYHUisDoRWJ0IrE4EVicCqxOB1YnA6kRgdSKwOhFYnQiszb7/AJCST4INmfNfAAAAAElFTkSuQmCC";
+					document.getElementById("juegostrower-animthumb-upload").style.display="none";
 					var reader = new FileReader();
 					reader.onload = function (e) {
-						document.getElementById("uploadText").innerHTML = "Starting upload";
-						$("#uploadPicker").val("");
-						$.ajax({
-							type: "POST",
-							url: "/internalapi/project/thumbnail/" + Scratch.INIT_DATA.PROJECT.model.id + "/set/",
-							data: e.target.result,
-							contentType: "",
-							processData: false,
-							xhr: function () {
-								var xhr = $.ajaxSettings.xhr();
-								xhr.upload.onprogress = function (e) {
-								document.getElementById("uploadText").innerHTML = "Uploading image " + Math.floor(e.loaded / e.total * 100) + "%";
-								};
-								return xhr;
-							},
-							success: function () {
-								$("#uploadToast").css({"backgroundColor": "#dff0d8","color": "#468847","borderColor": "#d6e9c6"});
-								document.getElementById("uploadText").innerHTML = '<img src="' + reader1.result + '" style="width: 35px;height: 26px;vertical-align: bottom;background-color: white;"><span style="font-size: 15px;"> The thumbnail was successfully changed.</span>';
-								$("#updateSelect, #updateClose").attr("type", "submit");
-							},
-							error: function () {
-								$("#uploadToast").css({"backgroundColor": "#fba7a7","color": "#882626","borderColor": "#ff7a7a"});
-								document.getElementById("uploadText").innerHTML = 'Error: try again or try with a smaller image.';
-								$("#updateSelect, #updateClose").attr("type", "submit");
+						document.getElementById("juegostrower-animthumb-status").innerText = "Starting upload...";
+						var juegostroweranimthumbxhttp = new XMLHttpRequest();
+						juegostroweranimthumbxhttp.open("POST", "/internalapi/project/thumbnail/" + location.href.replace(/\D/g,'').substring(0,10) + "/set/", true);
+						juegostroweranimthumbxhttp.setRequestHeader("X-CSRFToken", (decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent("scratchcsrftoken").replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null), false);
+						juegostroweranimthumbxhttp.onreadystatechange = function() {
+							if (this.readyState == 4) {
+								document.getElementById("juegostrower-animthumb-upload").style.display="";
+								document.getElementById("juegostrower-animthumb-image").src = "https://cdn2.scratch.mit.edu/get_image/project/" + location.href.replace(/\D/g,'').substring(0,10) + "_80x60.png?"+new Date().getTime();
+								if (this.status == 200){
+									document.getElementById("juegostrower-animthumb-banner").style.color="lawngreen";
+									document.getElementById("juegostrower-animthumb-status").innerText = 'Success! The thumbnail was changed.';
+								} else {
+									document.getElementById("juegostrower-animthumb-banner").style.color="red";
+									document.getElementById("juegostrower-animthumb-status").innerText = 'Error! Your image probably was too big for Scratch, try with a smaller image.';
+								}
 							}
-						});
-					};
-					reader.readAsArrayBuffer(document.getElementById('uploadPicker').files[0]);
-				};
-				document.getElementById("uploadText").innerHTML = "Reading your image";
+						};
+						juegostroweranimthumbxhttp.upload.onprogress = function (e) {
+							document.getElementById("juegostrower-animthumb-status").innerText = "Uploading image " + Math.floor(e.loaded / e.total * 100) + "%";
+						};
+						juegostroweranimthumbxhttp.send(e.target.result);
+					}
+					reader.readAsArrayBuffer(document.getElementById('juegostrower-animthumb-picker').files[0]);
+				}
 			});
-			$("uploadPicker").trigger("click");
-		} else {
-			alert("This is not one of your Scratch Projects! This tool doesn't work for other websites. :)");
 		}
-} else if ((!document.getElementById('report-this')) && location.href.startsWith("https://scratch.mit.edu/projects/")) {
-	document.getElementById("uploadPicker").click();
+		document.getElementById("juegostrower-animthumb-picker").click();
+	} else {
+		alert("You have to go to one of your Scratch projects to use this. Then, click this again. If you think this is an error, comment on the @JuegOStrower (the developer, aka me) profile.");
+	}
+} catch(e){
+	alert("Animated Thumbnail found an unxpected error changing the thumbnail. Please comment on the @JuegOStrower (the developer, aka me) profile to help to fix the problem.");
 }
