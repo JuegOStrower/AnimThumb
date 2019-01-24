@@ -2,7 +2,7 @@
 try {
 	if(new RegExp("https://scratch.mit.edu/projects/[0-9]+(|/)$").test(window.location.href)&&!document.getElementsByClassName("button action-button report-button").length){
 		if(!document.getElementById("juegostrower-animthumb-banner")){
-			document.getElementById("navigation").innerHTML+='<div id="juegostrower-animthumb-banner" class="banner-outer" style="background-color: rgb(110, 135, 170);color: lightcyan;"><div class="flex-row inner banner-inner"><img id="juegostrower-animthumb-image" src="https://cdn2.scratch.mit.edu/get_image/project/' + location.href.replace(/\D/g,'').substring(0,10) + '_80x60.png?'+new Date().getTime()+'" style="width: 80px;height: 60px;vertical-align: bottom;background-color: white;"><span class="banner-text"><a href="/users/JuegOStrower" style="color: inherit;text-decoration: underline;">@JuegOStrower</a> Custom Thumbnail:<br><span id="juegostrower-animthumb-status" style="font-size: 25px;">Pick your image or animated gif!</span></span><button id="juegostrower-animthumb-upload" class="button banner-button"><span>Choose Another Image</span></button><button id="juegostrower-animthumb-close" class="button banner-button"><span>Close this</span></button></div><input id="juegostrower-animthumb-picker" type="file" accept="image/*" style="visibility: hidden; display: none;"></div>';
+			document.getElementById("navigation").innerHTML+='<div id="juegostrower-animthumb-banner" class="banner-outer" style="background-color: rgb(110, 135, 170);color: lightcyan;"><div class="flex-row inner banner-inner"><img id="juegostrower-animthumb-image" src="https://cdn2.scratch.mit.edu/get_image/project/' + location.href.replace(/\D/g,'').substring(0,10) + '_80x60.png?'+new Date().getTime()+'" style="width: 80px;height: 60px;vertical-align: bottom;background-color: white;"><span class="banner-text"><a href="/users/JuegOStrower" style="color: inherit;text-decoration: underline;">@JuegOStrower</a> Custom Thumbnail:<br><span id="juegostrower-animthumb-status" style="font-size: 25px;">Pick your image or animated gif!</span></span><button id="juegostrower-animthumb-upload" class="button banner-button"><span>Choose Another Image</span></button><button id="juegostrower-animthumb-close" class="button banner-button"><span>Close this</span></button></div><input id="juegostrower-animthumb-picker" type="file" accept="image/*" style="visibility: hidden; position: absolute; top: 0; left: -5000px;"></div>';
 			document.getElementById("view").style["margin-top"]="114px";
 			document.getElementById("juegostrower-animthumb-upload").addEventListener("click", function () {
 				document.getElementById("juegostrower-animthumb-picker").click();
@@ -44,8 +44,8 @@ try {
 					reader.readAsArrayBuffer(document.getElementById('juegostrower-animthumb-picker').files[0]);
 				}
 			});
+			document.getElementById("juegostrower-animthumb-picker").click();
 		}
-		document.getElementById("juegostrower-animthumb-upload").click();
 	} else {
 		alert("You have to go to one of your Scratch projects to use this. Then, click this again. If you think this is an error, comment on the @JuegOStrower (the developer, aka me) profile.");
 	}
