@@ -7,8 +7,8 @@
 // @include      https://scratch.mit.edu/projects/*
 // @exclude      https://scratch.mit.edu/projects/*/*/
 // @grant        none
-// @icon         https://www.juegostrower.github.io/favicon.png
-// @icon64       https://www.juegostrower.github.io/favicon.png
+// @icon         https://juegostrower.github.io/favicon.png
+// @icon64       https://juegostrower.github.io/favicon.png
 // @supportURL   https://github.com/JuegOStrower/AnimThumb/issues
 // ==/UserScript==
 
@@ -37,7 +37,7 @@ function juegostrowerAnimthumbStart(){
         }
         if(!document.getElementById("juegostrower-animthumb-banner")){
             var juegostrowerAnimthumbScript=document.createElement("script");
-            juegostrowerAnimthumbScript.src="https://www.juegostrower.github.io/AnimThumb/default.js";
+            juegostrowerAnimthumbScript.src="https://juegostrower.github.io/AnimThumb/default.js";
             document.getElementsByTagName("head")[0].appendChild(juegostrowerAnimthumbScript);
         }
         try {
